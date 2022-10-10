@@ -1,0 +1,48 @@
+<<<<<<< HEAD
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    Scanner input = new Scanner(System.in);
+        int num= input.nextInt();
+        // boolean ans= false;
+        
+        for(int i=0; i<=num; i++){
+            for(int j=0; j<=num; j++){
+                if(i*i + j*j == num){
+                    // ans = true;
+                    System.out.println(true);
+                    return;
+                }
+            }
+        }
+        System.out.println(false);
+    }
+=======
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    Scanner input = new Scanner(System.in);
+        int num= input.nextInt();
+        // boolean ans= false;
+        
+        for(int i=0; i<=num; i++){
+            for(int j=0; j<=num; j++){
+                if(i*i + j*j == num){
+                    // ans = true;
+                    System.out.println(true);
+                    return;
+                }
+            }
+        }
+        System.out.println(false);
+    }
+>>>>>>> b5bb15e (new)
+}

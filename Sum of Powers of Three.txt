@@ -1,0 +1,54 @@
+<<<<<<< HEAD
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        
+        int n= input.nextInt();
+       int flag=0;
+        boolean ans = true;
+        
+        while(n>0){
+             
+            if((n%3)==2){
+                ans = false;
+                // System.out.println("false");
+               break;
+            }
+           n/=3;
+        }
+       
+        System.out.println(ans);
+    }
+=======
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        
+        int n= input.nextInt();
+       int flag=0;
+        boolean ans = true;
+        
+        while(n>0){
+             
+            if((n%3)==2){
+                ans = false;
+                // System.out.println("false");
+               break;
+            }
+           n/=3;
+        }
+       
+        System.out.println(ans);
+    }
+>>>>>>> b5bb15e (new)
+}

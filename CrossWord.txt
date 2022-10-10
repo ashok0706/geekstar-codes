@@ -1,0 +1,366 @@
+<<<<<<< HEAD
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+     public static boolean H_F(char ch[][] ,int row,int col, String str){
+         
+         if(col+str.length()-1>ch.length){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             col++;
+        }
+         return true;
+     }
+    
+         public static boolean H_B(char ch[][] ,int row,int col, String str){
+         
+         if(col-str.length()-1<0){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             col--;
+        }
+         return true;
+     }
+    
+       public static boolean V_U(char ch[][] ,int row,int col, String str){
+         
+         if(row-str.length()-1<0){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row--;
+        }
+         return true;
+     }
+    
+     public static boolean V_D(char ch[][] ,int row,int col, String str){
+         
+         if(row+str.length()>ch.length-1){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row++;
+        }
+         return true;
+     }
+    
+     public static boolean R_D_F(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row<0 || col>ch.length-1){
+                 return false;
+             }
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row--;
+             col++;
+        }
+         return true;
+     }
+    
+    public static boolean R_D_B(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row>ch.length-1 || col<0){
+                 return false;
+             }
+            
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row++;
+             col--;
+        }
+         return true;
+     }
+    
+      public static boolean L_D_F(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row>ch.length-1 || col>ch.length-1){
+                 return false;
+             }
+            
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row++;
+             col++;
+        }
+         return true;
+     }
+      public static boolean L_D_B(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row<0 || col<0){
+                 return false;
+             }
+            
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row--;
+             col--;
+        }
+         return true;
+     }
+    
+    public static boolean checkalldiamentions(char ch[][], int row, int col, String str){
+        
+        boolean ans1=H_F(ch, row, col, str); 
+        boolean ans2=H_B(ch, row, col, str); 
+        boolean ans3=V_U(ch, row, col, str); 
+        boolean ans4=V_D(ch, row, col, str); 
+        boolean ans5=R_D_F(ch, row, col, str); 
+        boolean ans6=R_D_B(ch, row, col, str);
+         boolean ans7=L_D_F(ch, row, col,str);
+         boolean ans8=L_D_B(ch, row, col, str);
+        
+ if(ans1==true || ans2==true || ans3==true || ans4==true || ans5==true || ans6==true || ans7==true || ans8==true){
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean crossword(char ch[][], String str){
+        
+        char c= str.charAt(0);
+        
+        for(int i=0; i<ch.length; i++){
+            for(int j=0; j<ch.length; j++){
+                if(ch[i][j]==c){
+                   boolean ans= checkalldiamentions(ch, i, j,str);
+                    if(ans==true){
+                    return true;
+                }
+                }
+                
+            }
+            
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n =input.nextInt();
+        char ch[][]= new char[n][n];
+        
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                ch[i][j]=input.next().charAt(0);
+            }
+        }
+        String str=input.next();
+        boolean ans = crossword(ch, str);
+        System.out.println(ans);
+    }
+=======
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+     public static boolean H_F(char ch[][] ,int row,int col, String str){
+         
+         if(col+str.length()-1>ch.length){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             col++;
+        }
+         return true;
+     }
+    
+         public static boolean H_B(char ch[][] ,int row,int col, String str){
+         
+         if(col-str.length()-1<0){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             col--;
+        }
+         return true;
+     }
+    
+       public static boolean V_U(char ch[][] ,int row,int col, String str){
+         
+         if(row-str.length()-1<0){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row--;
+        }
+         return true;
+     }
+    
+     public static boolean V_D(char ch[][] ,int row,int col, String str){
+         
+         if(row+str.length()>ch.length-1){
+             return false;
+         }
+         
+         for(int i=0; i<str.length(); i++){
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row++;
+        }
+         return true;
+     }
+    
+     public static boolean R_D_F(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row<0 || col>ch.length-1){
+                 return false;
+             }
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row--;
+             col++;
+        }
+         return true;
+     }
+    
+    public static boolean R_D_B(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row>ch.length-1 || col<0){
+                 return false;
+             }
+            
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row++;
+             col--;
+        }
+         return true;
+     }
+    
+      public static boolean L_D_F(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row>ch.length-1 || col>ch.length-1){
+                 return false;
+             }
+            
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row++;
+             col++;
+        }
+         return true;
+     }
+      public static boolean L_D_B(char ch[][] ,int row,int col, String str){
+         
+         
+         for(int i=0; i<str.length(); i++){
+             if(row<0 || col<0){
+                 return false;
+             }
+            
+             if(ch[row][col]!=str.charAt(i)){
+                 return false;
+             }
+             row--;
+             col--;
+        }
+         return true;
+     }
+    
+    public static boolean checkalldiamentions(char ch[][], int row, int col, String str){
+        
+        boolean ans1=H_F(ch, row, col, str); 
+        boolean ans2=H_B(ch, row, col, str); 
+        boolean ans3=V_U(ch, row, col, str); 
+        boolean ans4=V_D(ch, row, col, str); 
+        boolean ans5=R_D_F(ch, row, col, str); 
+        boolean ans6=R_D_B(ch, row, col, str);
+         boolean ans7=L_D_F(ch, row, col,str);
+         boolean ans8=L_D_B(ch, row, col, str);
+        
+ if(ans1==true || ans2==true || ans3==true || ans4==true || ans5==true || ans6==true || ans7==true || ans8==true){
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean crossword(char ch[][], String str){
+        
+        char c= str.charAt(0);
+        
+        for(int i=0; i<ch.length; i++){
+            for(int j=0; j<ch.length; j++){
+                if(ch[i][j]==c){
+                   boolean ans= checkalldiamentions(ch, i, j,str);
+                    if(ans==true){
+                    return true;
+                }
+                }
+                
+            }
+            
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n =input.nextInt();
+        char ch[][]= new char[n][n];
+        
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                ch[i][j]=input.next().charAt(0);
+            }
+        }
+        String str=input.next();
+        boolean ans = crossword(ch, str);
+        System.out.println(ans);
+    }
+>>>>>>> b5bb15e (new)
+}

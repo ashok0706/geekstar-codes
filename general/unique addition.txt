@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static int unic_addition(int n){
+        
+        int ans=0;
+        while(n>0){
+            int d=n%10; 
+            ans+=d;
+            n/=10;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n= input.nextInt();
+        int ans=n;
+        while(ans>9){
+            ans=unic_addition(ans);
+            // System.out.print(ans);
+        }
+        System.out.print(ans);
+    }
+}

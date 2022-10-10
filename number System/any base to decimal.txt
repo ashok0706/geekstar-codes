@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        
+        String str= input.next();
+        int base= input.nextInt();
+        
+        
+        int ans=0;
+        int pow=1;
+        int i=str.length()-1;
+        while(i>=0){
+            char c= str.charAt(i);
+            int digit=0;
+            if(c>='A' && c<='Z'){
+                 digit= c-'A'+10;
+            }
+            else{
+                digit=c-'0';
+            }
+           
+            ans+=digit*pow;
+            i--;
+            pow*=base;
+        }
+        System.out.println(ans);
+    }
+}

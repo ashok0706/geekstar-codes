@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+         int  ans=0;
+        int paw=1;
+        while(n>0){
+            
+            int rim= n%2;
+            
+            ans+=rim*paw;
+            paw*=10;
+            n/=2;
+        }
+        System.out.println(ans);
+        
+    }
+}

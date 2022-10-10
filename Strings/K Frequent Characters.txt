@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void max_occurance(String str, int n){
+        
+        int frq[]= new int[26];
+        
+        for(int i=0; i<str.length(); i++){
+            if(str.charAt(i)==' '){
+                continue;
+            }
+            char ch = Character.toLowerCase(str.charAt(i));
+            int x= ch-'a';
+            frq[x]++;
+            
+        }
+        
+        boolean frqindex[]= new boolean[26];
+        
+        for(int j=0; j<n; j++){
+            int max=-1;
+            int  index=0;
+        for(int i=0; i<26; i++){
+            if(frq[i]>max && frqindex[i]==false){
+                max=frq[i];
+                index=i;
+            }
+        }
+        
+        char ans= (char)(index+'a');
+        System.out.print(ans+" ");
+            frqindex[index]=true;
+    }
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        String str= input.nextLine();
+        int n= input.nextInt();
+        
+        max_occurance(str, n);
+    }
+}

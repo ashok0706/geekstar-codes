@@ -1,0 +1,90 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+     public static boolean First_row(String str){
+         String row= "qwertyuiop";
+         int cnt=0;
+         for(int i=0; i<str.length(); i++){
+             char ch= str.charAt(i);
+             for(int j=0; j<row.length(); j++){
+                 if(Character.toLowerCase(ch)==row.charAt(j)){
+                  cnt++;   
+                 }
+             }
+         }
+         if(cnt==str.length()){
+             return true;
+         }else{
+             return false;
+         }
+     }
+    
+     public static boolean second_row(String str){
+         String row= "asdfghjkl";
+         int cnt=0;
+         for(int i=0; i<str.length(); i++){
+             char ch= str.charAt(i);
+             for(int j=0; j<row.length(); j++){
+                 if(Character.toLowerCase(ch)==row.charAt(j)){
+                  cnt++;   
+                 }
+             }
+         }
+         if(cnt==str.length()){
+             return true;
+         }else{
+             return false;
+         }
+     }
+    
+       public static boolean third_row(String str){
+         String row= "zxcvbnm";
+         int cnt=0;
+         for(int i=0; i<str.length(); i++){
+             char ch= str.charAt(i);
+             for(int j=0; j<row.length(); j++){
+                 if(Character.toLowerCase(ch)==row.charAt(j)){
+                  cnt++;   
+                 }
+             }
+         }
+         if(cnt==str.length()){
+             return true;
+         }else{
+             return false;
+         }
+     }
+    
+    public static void American_keyboard(String arr[]){
+        int check=0;
+        for(int i=0; i<arr.length; i++){
+            boolean R1= First_row(arr[i]);
+            boolean R2= second_row(arr[i]);
+            boolean R3= third_row(arr[i]);
+            
+            if(R1==true || R2==true || R3==true){
+              //  System.out.print(i);
+                System.out.print(arr[i]+" ");
+                check++;
+            }
+        }
+        if(check==0){
+            System.out.println(-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input= new Scanner(System.in);
+        
+        int n = input.nextInt();
+        
+        String arr[]= new String[n];
+        for(int i=0; i<n; i++){
+            arr[i]= input.next();
+        }
+        
+        American_keyboard(arr);
+    }
+}
