@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n= input.nextInt();
+        List<Integer> al = new ArrayList();
+        
+        for(int a=1; a<=n; a++){
+            int i=input.nextInt();
+            if(i==1){
+                System.out.println(al.size());
+            }
+            else if(i==2){
+                if(al.size()==0){
+                    System.out.println("invalid-move");
+                }else{
+                   System.out.println(al.get(al.size()-1));
+                   al.remove(al.size()-1);
+                }
+           }
+            else if(i==3){
+                int x=input.nextInt();
+                System.out.println(x);
+                al.add(x);
+            }
+            else if(i==4){
+                if(al.size()==0){
+                    System.out.println("invalid-move");
+                }
+                else{
+                    System.out.println(al.get(0));
+                    al.remove(0);
+                    
+                }
+            }
+            else if(i==5){
+                int xx= input.nextInt();
+                System.out.println(xx);
+                al.add(0,xx);
+            }
+            else if(i==6){
+                if(al.size()==0){
+                    System.out.println("invalid-move");
+                }
+                else{
+                     for(Integer num : al){
+                    System.out.print(num+" ");
+                }
+                System.out.println();
+                }
+               
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n= input.nextInt();
+        int arr1[]= new int[n];
+        for(int i=0; i<n; i++){
+            arr1[i]= input.nextInt();
+        }
+        
+        int m= input.nextInt();
+        int arr2[]= new int[m];
+        for(int i=0; i<m; i++){
+            arr2[i]=input.nextInt(); 
+        }
+        
+        List<Integer> ls= new ArrayList();
+        int x=0;
+        
+        if(n>m)x=n;
+        else x=m;
+        
+        for(int i=0; i<x; i++){
+            if(i<n){
+                ls.add(arr1[i]);
+            }
+            
+            if(i<m){
+                ls.add(arr2[i]);
+            }
+            }
+        Set<Integer> st= new HashSet();
+        
+        for(int i=0; i<ls.size(); i++){
+            st.add(ls.get(i));
+        }
+        for(Integer num : st){
+            System.out.print(num+" ");
+        }
+        // System.out.println(st);
+        // System.out.print(Arrays.toString(ls.toArray()));
+    }
+}
