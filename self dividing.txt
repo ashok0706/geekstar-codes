@@ -1,13 +1,13 @@
-<<<<<<< HEAD
 import java.io.*;
 import java.util.*;
 
 public class Solution {
     public static boolean isselfdividing(int n){
-        
+        int v=n;
         while(n>0){
             int d=n%10;
-            if(n%d!=0){
+            if(d==0)return false;
+           else if(v%d!=0){
                 return false;
             }
             n/=10;
@@ -27,34 +27,4 @@ public class Solution {
             }
         }
     }
-=======
-import java.io.*;
-import java.util.*;
-
-public class Solution {
-    public static boolean isselfdividing(int n){
-        
-        while(n>0){
-            int d=n%10;
-            if(n%d!=0){
-                return false;
-            }
-            n/=10;
-        }
-        return true;
-    }
-
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        Scanner input= new Scanner(System.in);
-        int start= input.nextInt();
-        int end= input.nextInt();
-        
-        for(int i=start; i<=end; i++){
-            if(isselfdividing(i)==true){
-                System.out.println(i);
-            }
-        }
-    }
->>>>>>> b5bb15e (new)
 }
