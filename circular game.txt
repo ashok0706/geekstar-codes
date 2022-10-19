@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n= input.nextInt();
+        int k = input.nextInt();
+        
+        List<Integer> ls= new ArrayList();
+        
+        for(int i=1; i<=n ; i++){
+            ls.add(i);
+        }
+        
+        int index=0;
+        while(ls.size()!=1){
+            index=(index+k-1)%ls.size();
+            ls.remove(index);
+        }
+       System.out.println(ls.get(0));
+    }
+}

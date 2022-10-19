@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        String str= input.next();
+        Stack<Integer> st = new Stack();
+        for(int i=0; i<str.length(); i++){
+            char ch=str.charAt(i);
+            if(Character.isDigit(ch)==true){
+                st.push(ch-'0');
+            }
+            else{
+                int x=st.pop();
+                int y=st.pop();
+                if(ch=='+'){
+                   st.push(x+y);
+                }
+                else if(ch=='-'){
+                    st.push(y-x);
+                }
+                else if(ch=='*'){
+                    st.push(x*y);
+                }
+                else if( ch=='/'){
+                    st.push(y/x);
+                }
+                
+            }
+        }
+        System.out.println(st.peek());
+    }
+}
