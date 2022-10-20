@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int x= input.nextInt();
+        int arr[]= new int[x];
+        
+        HashMap<Integer,Integer> map= new HashMap();
+        for(int i=0; i<x; i++){
+            int n= input.nextInt();
+           map.put(n,map.getOrDefault(n,0)+1);
+        }
+        
+        HashMap<Integer, Boolean> map2= new HashMap();
+        
+        for(Integer num:map.keySet()){
+            int val=map.get(num);
+            if(map2.containsKey(val)==true){
+                System.out.println("false");
+                return;
+            }
+            else{
+                map2.put(val,true);
+            }
+        }
+       
+        System.out.println("true");
+    }
+}
