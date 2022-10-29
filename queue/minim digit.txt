@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+      //  if(n==0)System.out.println(input.nextInt());
+        PriorityQueue<Integer> pa=new PriorityQueue<>();
+        
+        for(int i=0; i<n; i++){
+            int x=input.nextInt();
+        pa.add(x);    
+        }
+        
+        long a=0;
+        long b=0;
+        
+        for(int i=0; i<n; i++){
+            if(i%2==0){
+                a=(a*10)+pa.remove();
+            }
+            else{
+                b=(b*10)+pa.remove();
+            }
+        }
+        
+        System.out.println(a+b);
+    }
+}

@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int n =input.nextInt();
+        int k= input.nextInt();
+        int a=k;
+        int arr[]= new int[n]; 
+        for(int i=0; i<n; i++){
+            arr[i]= input.nextInt();
+        }
+        
+        Queue<Integer> q= new LinkedList<>();
+        
+        for(int i=0; i<=n-a; i++){
+            int j=i;
+            while(j<k){
+                if(arr[j]<0){
+                   q.add(arr[j]);                    
+                }
+                j++;
+            }
+             if(q.size()==0){
+                    System.out.print(0+" ");
+                }else{
+                    System.out.print(q.peek()+" ");
+                }
+                
+              q.clear();
+            k++;
+        }
+        
+    }
+}
