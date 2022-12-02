@@ -1,0 +1,20 @@
+  public static int middle_node(SinglyLinkedListNode head) {
+    // Write your code here
+
+        int length=0;
+        SinglyLinkedListNode temp = head;
+        while(temp!=null){
+            length++;
+            temp = temp.next;
+        }
+        
+       length = (length+1)/2;
+        
+        temp= head;
+        for(int i=1; i<=length; i++){
+            temp= head;
+            head = head.next;
+        }
+        // System.out.print(temp.data);
+        return temp.data;
+    }
